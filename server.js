@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const initializeDatabase = require('./initializeDB');
-const Color = require('./models/Color');
+const Color = require('./models/colors');
+require('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,7 +15,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB Connection
-const Color = require('./models/Color');
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('MongoDB connected');

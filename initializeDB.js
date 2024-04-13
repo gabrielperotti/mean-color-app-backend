@@ -1,4 +1,4 @@
-const Color = require('./models/Color');
+const Color = require('./models/colors');
 
 async function initializeDatabase() {
   try {
